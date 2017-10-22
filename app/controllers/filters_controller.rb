@@ -13,8 +13,14 @@ class FiltersController < ApplicationController
         count = 0
         a = 0
         b = 0
-
+        first_row = true
         CSV.foreach(csv_file_path) do |row|
+                
+             if first_row == true
+                first_row = false
+                next
+            end
+                
             array[a] = row[0].to_f #moove all the numbers from row[0] to an array
             a += 1
 
