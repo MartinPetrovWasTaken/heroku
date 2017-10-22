@@ -15,10 +15,10 @@ class LinRegressionsController < ApplicationController
 		rows = 1
 		xi = []
 		yi = []
-		f = true
+		first_row = true
 		CSV.foreach(csv_file_name) do |row|
-			if f == true
-				f = false
+			if first_row == true
+				first_row = false
 				next
 			end
 			if number?(row[0])
